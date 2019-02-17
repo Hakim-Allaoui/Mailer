@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer", "Mailer\Mailer.csproj", "{2B3C5D27-5518-4FC8-BEB4-BE1C9CA4883E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{23337C7D-8D52-41C6-A8E4-7B0FD93C120A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{2B3C5D27-5518-4FC8-BEB4-BE1C9CA4883E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B3C5D27-5518-4FC8-BEB4-BE1C9CA4883E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B3C5D27-5518-4FC8-BEB4-BE1C9CA4883E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23337C7D-8D52-41C6-A8E4-7B0FD93C120A}.Debug|Any CPU.ActiveCfg = Debug
+		{23337C7D-8D52-41C6-A8E4-7B0FD93C120A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,16 @@
+CREATE TABLE Authentications(
+	[login] VARCHAR(50) PRIMARY KEY,
+	[password] VARCHAR(50) DEFAULT '0000',
+	[counter] INT DEFAULT 0
+	)
+
+CREATE TABLE Users(
+	idUser INT PRIMARY KEY IDENTITY(0,1),
+	fullName VARCHAR(50) DEFAULT NULL,
+	DateN DATE DEFAULT NULL,
+	[login] VARCHAR(50) FOREIGN KEY REFERENCES Authentications([login])
+	)
+
+CREATE TABLE mails(mail VARCHAR)
+CREATE TABLE succeed(mail VARCHAR)
+CREATE TABLE fail(mail VARCHAR)

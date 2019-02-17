@@ -1,0 +1,26 @@
+CREATE PROCEDURE PS_Authentication @log VARCHAR(50),@p VARCHAR(50),@msg VARCHAR(50) OUTPUT
+AS
+BEGIN
+	IF EXISTS(SELECT [login],[counter] FROM Authentications WHERE [login] = @log AND [counter] >= 3)
+		BEGIN
+			SET @msg = 'User blocked'
+		END
+	ELSE
+		BEGIN
+			IF EXISTS(SELECT [login],[password] FROM Authentications WHERE [login] = @log AND [password] = @p)
+				BEGIN
+					UPDATE Authentications SET [counter] = 0 WHERE [login] = @log
+					SET @msg = 'Login Succeed'
+				END
+			ELSE
+				BEGIN
+					UPDATE Authentications SET [counter] = [counter] + 1 WHERE [login] = @log
+					SET @msg = 'Login Failed'
+				END
+			IF EXISTS(SELECT [login] FROM Authentications WHERE [login] = @log) AND @p = 'restore'
+				BEGIN
+					UPDATE Authentications SET [counter] = 0 WHERE [login] = @log
+					SET @msg = 'User Unblocked'
+				END
+		END
+END
